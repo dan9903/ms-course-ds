@@ -10,16 +10,16 @@ import org.springframework.cloud.config.server.EnableConfigServer;
 @SpringBootApplication
 public class HrConfigServerApplication implements CommandLineRunner {
 
-	@Value("${GITHUB_USER}")
-	private String user;
-
+	@Value("${spring.cloud.config.server.git.username}")
+	private String username;
+	
 	public static void main(String[] args) {
 		SpringApplication.run(HrConfigServerApplication.class, args);
 	}
 
 	@Override
 	public void run(String... args) throws Exception {
-		//System.out.println("USERNAME = " + user);
+		System.out.println("USERNAME = " + username);
 	}
 
 }
